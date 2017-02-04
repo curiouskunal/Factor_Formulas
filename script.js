@@ -20,6 +20,7 @@ function round(value, decimals) {
 
 function result() {
     var x = document.forms["myForm"]["Formulas"].value;
+    var g = document.forms["myForm"]["g"].value;
     var i = document.forms["myForm"]["i"].value;
     i = parseFloat(i / 100);
     var N = document.forms["myForm"]["N"].value;
@@ -60,6 +61,16 @@ function result() {
         case "P/A":
             var ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
             ans = round(ans,5);
+           if(g != ""){
+               console.log(g);
+               g  = parseFloat(g/100);
+               i = (((1+i)/(1+g))-1);
+
+               console.log(i);
+               ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
+               ans = ans/(1+g);
+               console.log(ans);
+           }
             document.getElementById("ans").innerHTML = ans;
             break;
 
