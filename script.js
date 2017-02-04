@@ -73,4 +73,16 @@ function result() {
         default:
             console.log("bye");
     }
+
+}
+
+
+function answer() {
+
+    var fact = parseFloat(document.getElementById("ans").innerHTML);
+    var num = parseFloat(document.getElementsByName('num')[0].value);
+
+    var finalAns = fact * num;
+
+    document.getElementById("final").innerHTML = finalAns;
 }
