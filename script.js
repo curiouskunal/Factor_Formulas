@@ -18,6 +18,19 @@ function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
+function iEffective() {
+    var i = parseFloat(document.forms["effectiveCalc"]["i"].value / 100);
+    var m = document.forms["effectiveCalc"]["m"].value;
+    var k = document.forms["effectiveCalc"]["k"].value;
+
+    console.log(" I="+i+" M="+m+" K="+k);
+
+    var out = Math.pow((1+(i/m)),k)-1;
+
+    document.getElementById('Ie').innerHTML = out;
+    console.log(out);
+}
+
 function result() {
     var x = document.forms["myForm"]["Formulas"].value;
     var g = document.forms["myForm"]["g"].value;
@@ -66,7 +79,7 @@ function result() {
                g  = parseFloat(g/100);
                i = (((1+i)/(1+g))-1);
 
-               console.log(i);
+               console.log("Inot = " + i);
                ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
                ans = ans/(1+g);
                console.log(ans);
