@@ -74,7 +74,10 @@ function result() {
         case "P/A":
             var ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
             ans = round(ans,5);
-           if(g != ""){
+           if(g != "" && parseFloat(g/100) == i) {
+               ans = N/(1+i);
+               console.log(i)
+           }else if(g != ""){
                console.log(g);
                g  = parseFloat(g/100);
                i = (((1+i)/(1+g))-1);
