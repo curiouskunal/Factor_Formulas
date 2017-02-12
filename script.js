@@ -2,17 +2,57 @@
  * Created by Kunal on 2017-02-03.
  */
 
-
-function testResults(something) {
-
-    console.log(something);
-
+function getCheckedRadio(radio_group) {
+    for (var i = 0; i < radio_group.length; i++) {
+        var button = radio_group[i];
+        if (button.checked) {
+            return button;
+        }
+    }
+    return undefined;
 }
 
-// function FgivenP(i,N) {
-//     console.log(eval(1+i)^N));
-//
-// }
+
+
+function updateRadio() {
+
+    var checkedButton = getCheckedRadio(document.forms["myForm"]["Formulas"]);
+
+    switch (checkedButton.value) {
+        case "F/P":
+            document.getElementById("ansText").innerText = "Future(F)" + " = ";
+            document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            break;
+        case "P/F":
+            document.getElementById("ansText").innerText = "Present(P)" + " = ";
+            document.getElementById("num").placeholder = "Future" + " Value" + "(F)";
+            break;
+        case "A/F":
+            document.getElementById("ansText").innerText = "Annuity(A)" + " = ";
+            document.getElementById("num").placeholder = "Future" + " Value" + "(F)";
+            break;
+        case "F/A":
+            document.getElementById("ansText").innerText = "Future(F)" + " = ";
+            document.getElementById("num").placeholder = "Annuity" + " Value" + "(A)";
+            break;
+        case "A/P":
+            document.getElementById("ansText").innerText = "Annuity(A)" + " = ";
+            document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            break;
+        case "P/A":
+            document.getElementById("ansText").innerText = "Future(F)" + " = ";
+            document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            break;
+        case "A/G":
+            document.getElementById("ansText").innerText = "Present(P)" + " = ";
+            document.getElementById("num").placeholder = "Gradient" + " Value" + "(G)";
+            break;
+        default:
+             console.log("Improper Radio Factor Selected");
+
+    }
+}
+
 
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
@@ -28,7 +68,7 @@ function iEffective() {
     var out = Math.pow((1+(i/m)),k)-1;
 
     document.getElementById('Ie').innerHTML = out;
-    console.log(out);
+    // console.log(out);
 }
 
 function result() {
@@ -43,37 +83,37 @@ function result() {
     switch(x) {
         case "F/P":
             var ans = Math.pow((1+i),N)
-            ans = round(ans,4);
+            // ans = round(ans,4);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         case "P/F":
             var ans = 1 / Math.pow((1+i),N);
-            ans = round(ans,5);
+            // ans = round(ans,5);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         case "A/F":
             var ans = i / (Math.pow((1+i),N) - 1);
-            ans = round(ans,5);
+            // ans = round(ans,5);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         case "F/A":
             var ans = (Math.pow((1+i),N)-1)/i;
-            ans = round(ans,5);
+            // ans = round(ans,5);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         case "A/P":
             var ans = (i * Math.pow((1+i),N)) / (Math.pow((1+i),N)-1);
-            ans = round(ans,5);
+            // ans = round(ans,5);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         case "P/A":
             var ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
-            ans = round(ans,5);
+            // ans = round(ans,5);
            if(g != "" && parseFloat(g/100) == i) {
                ans = N/(1+i);
                console.log(i)
@@ -93,12 +133,12 @@ function result() {
         case "A/G":
             var ans = (1/i) - (N/ (Math.pow((1+i),N) -1 ));
 
-            ans = round(ans,5);
+            // ans = round(ans,5);
             document.getElementById("ans").innerHTML = ans;
             break;
 
         default:
-            console.log("bye");
+            alert("Select one of the Factors");
     }
 
 }

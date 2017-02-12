@@ -1,7 +1,7 @@
-#final{
-    font-weight: bold
+body{
+    font-size: 16px
 }
 
-#ans{
+.copy{
     font-weight: bold;
 }
