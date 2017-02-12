@@ -12,6 +12,14 @@ function getCheckedRadio(radio_group) {
     return undefined;
 }
 
+function show_hide_ginot(bool) {
+    if (bool) {
+        document.getElementById("show_hide").style.display = "block";
+    }else{
+        document.getElementById("show_hide").style.display = "none";
+    }
+
+}
 
 
 function updateRadio() {
@@ -22,30 +30,37 @@ function updateRadio() {
         case "F/P":
             document.getElementById("ansText").innerText = "Future(F)" + " = ";
             document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            show_hide_ginot(false);
             break;
         case "P/F":
             document.getElementById("ansText").innerText = "Present(P)" + " = ";
             document.getElementById("num").placeholder = "Future" + " Value" + "(F)";
+            show_hide_ginot(false);
             break;
         case "A/F":
             document.getElementById("ansText").innerText = "Annuity(A)" + " = ";
             document.getElementById("num").placeholder = "Future" + " Value" + "(F)";
+            show_hide_ginot(false);
             break;
         case "F/A":
             document.getElementById("ansText").innerText = "Future(F)" + " = ";
             document.getElementById("num").placeholder = "Annuity" + " Value" + "(A)";
+            show_hide_ginot(false);
             break;
         case "A/P":
             document.getElementById("ansText").innerText = "Annuity(A)" + " = ";
             document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            show_hide_ginot(false);
             break;
         case "P/A":
             document.getElementById("ansText").innerText = "Future(F)" + " = ";
             document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            show_hide_ginot(true);
             break;
         case "A/G":
             document.getElementById("ansText").innerText = "Present(P)" + " = ";
             document.getElementById("num").placeholder = "Gradient" + " Value" + "(G)";
+            show_hide_ginot(false);
             break;
         default:
              console.log("Improper Radio Factor Selected");
@@ -112,21 +127,23 @@ function result() {
             break;
 
         case "P/A":
-            var ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
+            var ans = (Math.pow((1 + i), N) - 1) / (i * Math.pow((1 + i), N));
             // ans = round(ans,5);
-           if(g != "" && parseFloat(g/100) == i) {
-               ans = N/(1+i);
-               console.log(i)
-           }else if(g != ""){
-               console.log(g);
-               g  = parseFloat(g/100);
-               i = (((1+i)/(1+g))-1);
 
-               console.log("Inot = " + i);
-               ans = (Math.pow((1+i),N)-1) / (i * Math.pow((1+i),N));
-               ans = ans/(1+g);
-               console.log(ans);
-           }
+            if (g != "" && parseFloat(g / 100) == i) {
+                ans = N / (1 + i);
+                document.getElementById("inotVal").innerHTML = ""+ i*100;
+            } else if (g != "") {
+                // console.log(g);
+                g = parseFloat(g / 100);
+                i = (((1 + i) / (1 + g)) - 1);
+
+                document.getElementById("inotVal").innerHTML = ""+ i*100;
+                // console.log("Inot = " + i);
+                ans = (Math.pow((1 + i), N) - 1) / (i * Math.pow((1 + i), N));
+                ans = ans / (1 + g);
+                console.log(ans);
+            }
             document.getElementById("ans").innerHTML = ans;
             break;
 

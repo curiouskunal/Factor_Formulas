@@ -31,9 +31,9 @@ function tooltip(el, message)
 		tooltip.id = "copy_tooltip";
 		tooltip.style.position = "absolute";
 		tooltip.style.border = "1px solid black";
-		tooltip.style.background = "#dbdb00";
+		tooltip.style.background = "#d7d7eb";
 		tooltip.style.opacity = 1;
-		tooltip.style.transition = "opacity 0.3s";
+		tooltip.style.transition = "opacity 0.05s";
 		document.body.appendChild(tooltip);
 	}
 	else
@@ -44,7 +44,7 @@ function tooltip(el, message)
 	tooltip.style.left = x + "px";
 	tooltip.style.top = y + "px";
 	tooltip.innerHTML = message;
-	setTimeout(function() { tooltip.style.opacity = 0; }, 2000);
+	setTimeout(function() { tooltip.style.opacity = 0; }, 1000);
 }
 
 
@@ -138,7 +138,7 @@ function select_all_and_copy(el)
 	    if (document.queryCommandSupported("copy"))
 	    {
 			var successful = document.execCommand('copy');  
-		    if (successful) tooltip(el, "Copied to clipboard.");
+		    if (successful) tooltip(el, "Copied!");
 		    else tooltip(el, "Press CTRL+C to copy");
 		}
 		else

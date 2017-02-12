@@ -24,8 +24,9 @@
     <input type="radio" name="Formulas" value="P/A" onclick="updateRadio()"> P/A
     <input type="radio" name="Formulas" value="A/G" onclick="updateRadio()"> A/G<br>
 
-
-    g: <input type="number" name="g"> % <br>
+    <div id="show_hide">
+    g: <input type="number" name="g"> % i_not= <a class = "copy" id = inotVal onclick="select_all_and_copy(this)">? </a> %<br>
+    </div>
     i: <input type="number" name="i"> % <br>
     N: <input type="number" name="N"> <br>
     <input type="button" value="Submit" onclick="result()">
@@ -36,10 +37,10 @@
     <a id = ansText >Answer =</a>
     <input type="number" name="num" id="num">
     <a>*</a>
-    <a id="ans" class="copy" data-clipboard-action="copy" data-clipboard-target="#ans"> Factor  </a>
+    <a id="ans" class="copy" onclick="select_all_and_copy(this)"> Factor  </a>
     <a>=</a>
 
-    <a id="final" class="copy" data-clipboard-action="copy" data-clipboard-target="#final"> Result </a>
+    <a id="final" class="copy" onclick="select_all_and_copy(this)"> Result </a>
 
     <button onclick="answer()">Calculate</button>
 </div>
@@ -55,15 +56,12 @@ iEffective:
     k: <input type="number" name="k">
     <a>  =  </a>
 
-    <a id="Ie" class="copy" data-clipboard-action="copy" data-clipboard-target="#Ie"> Ie  </a>
+    <a id="Ie" class="copy" onclick="select_all_and_copy(this)"> Ie  </a>
 
     <input type="button" value="Calculate" onclick="iEffective()">
 
 </form>
 
-<div id="textbox" onclick="select_all_and_copy(this)">content</div>
-
-<!--https://clipboardjs.com/-->
-<script src="assets/Clipboard/clipboard.js"></script>
+<!--http://www.seabreezecomputers.com/tips/copy2clipboard.htm-->
 <script src="assets/Copy2clipboard/copy2clipboard.js"></script>
 </body>
