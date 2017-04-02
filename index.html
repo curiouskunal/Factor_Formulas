@@ -21,7 +21,7 @@
         <input type="radio" name="Formulas" value="F/P" onclick="updateRadio()"> F/P
         <input type="radio" name="Formulas" value="P/F" onclick="updateRadio()"> P/F
         <input type="radio" name="Formulas" value="A/F" onclick="updateRadio()"> A/F
-        <input type="radio" name="Formulas" value="F/A" onclick="updateRadio()"> F/A <br>
+        <input type="radio" name="Formulas" value="F/A" onclick="updateRadio()"> F/A
         <input type="radio" name="Formulas" value="A/P" onclick="updateRadio()"> A/P
         <input type="radio" name="Formulas" value="P/A" onclick="updateRadio()"> P/A
         <input type="radio" name="Formulas" value="A/G" onclick="updateRadio()"> A/G<br>
@@ -37,6 +37,8 @@
     </form>
 </div>
 
+<hr>
+
 <div class = "box">
     <a id = ansText >Answer =</a>
     <input type="number" name="num" id="num">
@@ -48,6 +50,8 @@
 
     <button onclick="answer()">Calculate</button>
 </div>
+
+<hr>
 
 <div class = "box">
     iEffective:
@@ -65,8 +69,25 @@
     </form>
 </div>
 
+<hr>
+
 <div>
-    
+    Depreciation:
+    <form name="depreciation">
+
+        <input type="radio" name="Dep" value="StraightLine"> Straight Line
+        <input type="radio" name="Dep" value="DecliningBalance"> Declining Balance<br>
+
+        N: <input type="number" name="N">
+        P: <input type="number" name="P">
+        S: <input type="number" name="S">
+        at n years: <input type="number" name="n"> <br>
+        d : <input type="number" name="d"> % <br>
+
+        <input type="button" value="Submit" onclick="BV()">
+    </form>
+
+    BookValue = $<a id="BookVal"> val </a>
 </div>
 
 

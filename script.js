@@ -162,6 +162,31 @@ function result() {
 
 }
 
+function BV() {
+    console.log("hi");
+    var x = document.forms["depreciation"]["Dep"].value;
+    var N = parseFloat(document.forms["depreciation"]["N"].value);
+    var n = document.forms["depreciation"]["n"].value;
+    var P = document.forms["depreciation"]["P"].value;
+    var S = document.forms["depreciation"]["S"].value;
+    var d = document.forms["depreciation"]["d"].value / 100.00;
+
+    switch (x) {
+        case "StraightLine":
+            var ans = P-(n*((P - S) / N));
+            document.getElementById("BookVal").innerText = ans;
+            break;
+        case "DecliningBalance":
+            var ans = P*Math.pow((1-d),n);
+            document.getElementById("BookVal").innerText = ans;
+            break;
+
+            break;
+
+        default:
+            alert("Select one of the Depreciation Methods");
+    }
+}
 
 function answer() {
 
@@ -172,3 +197,4 @@ function answer() {
 
     document.getElementById("final").innerHTML = finalAns;
 }
+
