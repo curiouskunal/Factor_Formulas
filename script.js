@@ -53,12 +53,12 @@ function updateRadio() {
             show_hide_ginot(false);
             break;
         case "P/A":
-            document.getElementById("ansText").innerText = "Future(F)" + " = ";
-            document.getElementById("num").placeholder = "Present" + " Value" + "(P)";
+            document.getElementById("ansText").innerText = "Present(P)" + " = ";
+            document.getElementById("num").placeholder = "Annuity" + " Value" + "(A)";
             show_hide_ginot(true);
             break;
         case "A/G":
-            document.getElementById("ansText").innerText = "Present(P)" + " = ";
+            document.getElementById("ansText").innerText = "Annuity(A)" + " = ";
             document.getElementById("num").placeholder = "Gradient" + " Value" + "(G)";
             show_hide_ginot(false);
             break;
@@ -81,6 +81,8 @@ function iEffective() {
     console.log(" I="+i+" M="+m+" K="+k);
 
     var out = Math.pow((1+(i/m)),k)-1;
+
+    out = out * 100;
 
     document.getElementById('Ie').innerHTML = out;
     // console.log(out);
