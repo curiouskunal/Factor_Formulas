@@ -1,31 +1,9 @@
 body{
-    font-size: 16px;
-    margin: auto;
-    /*width: 50%;*/
-    border: 1px solid black;
-    /*padding: 10px;*/
-    background-color: #F7F7F7;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-
-h1{
-    text-align: center;
-    width: 100%;
-}
-
-
-input[type=number]{
-    width: 50px;
-}
-input[type=number]#num{
-    width: 100px;
+    font-size: 16px
 }
 
 #copy_tooltip{
-    font-size: 12px;
+    font-size: 12px
 }
 
 #show_hide{
@@ -34,23 +12,4 @@ input[type=number]#num{
 
 .copy{
     font-weight: bold;
-}
-
-.box {
-    /*width: 350px;*/
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /*text-align: center;*/
-    /*width: 50%;*/
-    /*margin: 0 auto;*/
-    margin: 20px;
-    padding-bottom: 10px;
-
-
-    border-radius: 25px;
-    border: 1px solid #000000;
-    padding: 20px;
-    width: 300px;
-    /*height: 150px;*/
-
 }
