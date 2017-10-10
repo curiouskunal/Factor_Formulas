@@ -34,18 +34,17 @@
 <div class="container">
     <h1>Factor Formulas</h1>
     <div class="container" style="text-align: center">
-        <a class="button button-primary" href="#">Factor</a>
-        <a class="button button-primary" href="#">i effective</a>
-        <a class="button button-primary" href="#">Depreciation</a>
+        <a class="button" href="#">Factor</a>
+        <a class="button" href="#">i effective</a>
+        <a class="button" href="#">Depreciation</a>
     </div>
 
-    <h4>Time value of Money</h4>
+    <div id="TimeValueOfMoney">
+        <h4>Time value of Money</h4>
 
-
-    <div>
         <div class="container">
-            <label for="exampleRecipientInput">Formulas</label>
-            <select class="u-full-width" id="exampleRecipientInput">
+            <label for="SelectFactor">Formulas</label>
+            <select class="u-full-width" id="SelectFactor">
                 <option value="Option 1">Select One</option>
                 <option value="Option 2">F/P - Compound Amount Single Payment</option>
                 <option value="Option 3">P/F - Present Worth Single Payment</option>
@@ -56,8 +55,13 @@
                 <option value="Option 7">A/G - Uniform Gradient Series</option>
             </select>
         </div>
-    </div>
 
+        <div id="FormulaInput" class="container" style="display: none">
+
+            test show hide on option 5
+
+        </div>
+    </div>
 
     <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some
         content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
@@ -65,5 +69,10 @@
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<!-- Script
+-------------------------------------------------- -->
+<script src="new_script.js"></script>
+
 </body>
 </html>

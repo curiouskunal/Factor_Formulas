@@ -262,6 +262,17 @@ input[type="button"].button-primary:focus {
     }
 }
 
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    .button.button-primary,
+    button.button-primary,
+    .button,
+    button {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+}
+
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type="email"],
