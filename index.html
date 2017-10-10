@@ -21,6 +21,8 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="assets/Skeleton-2.0.4/css/normalize.css">
     <link rel="stylesheet" href="assets/Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" href="style.css">
+
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -34,45 +36,109 @@
 <div class="container">
     <h1>Factor Formulas</h1>
     <div class="container" style="text-align: center">
-        <a class="button" href="#">Factor</a>
-        <a class="button" href="#">i effective</a>
-        <a class="button" href="#">Depreciation</a>
+        <a class="button" id="Factor_button">Factor</a>
+        <a class="button" id="iEffective_button">i effective</a>
+        <a class="button" id="Depreciation_button">Depreciation</a>
     </div>
 
-    <div id="TimeValueOfMoney">
+    <div id="TimeValueOfMoney" class="">
         <h4>Time value of Money</h4>
 
         <div class="container">
             <label for="SelectFactor">Formulas</label>
             <select class="u-full-width" id="SelectFactor">
-                <option value="Option 1">Select One</option>
-                <option value="Option 2">F/P - Compound Amount Single Payment</option>
-                <option value="Option 3">P/F - Present Worth Single Payment</option>
-                <option value="Option 4">A/F - Sinking Fund Payment Series</option>
-                <option value="Option 5">F/A - Compound Amount Payment Series</option>
-                <option value="Option 6">A/P - Capital Recovery Payment Series</option>
-                <option value="Option 6">P/A - Present Worth Payment Series</option>
-                <option value="Option 7">A/G - Uniform Gradient Series</option>
+                <option value="F/P">F/P - Compound Amount Single Payment</option>
+                <option value="P/F">P/F - Present Worth Single Payment</option>
+                <option value="A/F">A/F - Sinking Fund Payment Series</option>
+                <option value="F/A">F/A - Compound Amount Payment Series</option>
+                <option value="A/P">A/P - Capital Recovery Payment Series</option>
+                <option value="P/A">P/A - Present Worth Payment Series</option>
+                <option value="A/G">A/G - Uniform Gradient Series</option>
             </select>
         </div>
 
-        <div id="FormulaInput" class="container" style="display: none">
+        <div id="FormulaInput" class="container">
 
-            test show hide on option 5
+            <form name="myForm">
 
+                i: <input type="number" name="i"> % <br>
+                N: <input type="number" name="N"> <br>
+
+                <div id="show_hide">
+                    g: <input type="number" name="g"> % i_not= <a class = "copy" id = inotVal onclick="select_all_and_copy(this)">? </a> %<br>
+                </div>
+
+                <input type="button" value="Submit" onclick="result()">
+            </form>
+
+        </div>
+
+        <div id="FormulaResult" class="container">
+            <a id = ansText >Answer =</a>
+            <input type="number" name="num" id="num">
+            <a>*</a>
+            <a id="ans" class="copy" onclick="select_all_and_copy(this)"> Factor  </a>
+            <a>=</a> <br>
+
+            <a id="final" class="copy" onclick="select_all_and_copy(this)"> Result </a>
+
+            <button onclick="answer()">Calculate</button>
         </div>
     </div>
 
-    <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some
-        content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <div id="iEffective" class="hide">
+        <h4>Effective Interest</h4>
+        <div class="container">
+
+            <form name="effectiveCalc">
+
+                i : <input type="number" name="i">% <br>
+                m : <input type="number" name="m"><br>
+                k : <input type="number" name="k"> <br>
+                <a>  =  </a>
+                <a id="Ie" class="copy" onclick="select_all_and_copy(this)"> Ie  </a> %
+                <br>
+                <input type="button" value="Calculate" onclick="iEffective()">
+            </form>
+        </div>
+    </div>
+
+    <div id="Depreciation" class="hide">
+        <h4> Depreciation: </h4>
+
+        <div class="container">
+            <form name="depreciation">
+
+                <input type="radio" name="Dep" value="StraightLine"> Straight Line
+                <input type="radio" name="Dep" value="DecliningBalance"> Declining Balance<br>
+
+                N: <input type="number" name="N">
+                P: <input type="number" name="P">
+                S: <input type="number" name="S">
+                at n years: <input type="number" name="n"> <br>
+                d : <input type="number" name="d"> % <br>
+
+                <input type="button" value="Submit" onclick="BV()">
+            </form>
+
+            BookValue = $<a id="BookVal"> val </a>
+        </div>
+    </div>
+</div>
+
+<p class="hide">This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some
+    content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
 </div>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<!-- Script
+<!-- Scripts
 -------------------------------------------------- -->
 <script src="new_script.js"></script>
+<script src="script.js"></script>
+<!--http://www.seabreezecomputers.com/tips/copy2clipboard.htm-->
+<script src="assets/Copy2clipboard/copy2clipboard.js"></script>
 
 </body>
 </html>
