@@ -49,9 +49,12 @@ document.getElementById('SelectFactor').onchange = function(){
 // button toggles for Factor
 document.getElementById('Factor_button').onclick = function(){
     if ( document.getElementById("TimeValueOfMoney").classList.contains('hide') ){
-        document.getElementById("TimeValueOfMoney").classList.toggle('hide');
+        document.getElementById("TimeValueOfMoney").classList.remove('hide');
+        document.getElementById("Factor_button").classList.add('button-primary');
         document.getElementById("iEffective").classList.add('hide');
+        document.getElementById("iEffective_button").classList.remove('button-primary');
         document.getElementById("Depreciation").classList.add('hide');
+        document.getElementById("Depreciation_button").classList.remove('button-primary');
     }
 
 };
@@ -59,15 +62,21 @@ document.getElementById('Factor_button').onclick = function(){
 document.getElementById('iEffective_button').onclick = function(){
     if ( document.getElementById("iEffective").classList.contains('hide') ) {
         document.getElementById("TimeValueOfMoney").classList.add('hide');
+        document.getElementById("Factor_button").classList.remove('button-primary');
         document.getElementById("iEffective").classList.remove('hide');
+        document.getElementById("iEffective_button").classList.add('button-primary');
         document.getElementById("Depreciation").classList.add('hide');
+        document.getElementById("Depreciation_button").classList.remove('button-primary');
     }
 };
 // button toggles for Depreciation
 document.getElementById('Depreciation_button').onclick = function(){
     if ( document.getElementById("Depreciation").classList.contains('hide') ){
         document.getElementById("TimeValueOfMoney").classList.add('hide');
+        document.getElementById("Factor_button").classList.remove('button-primary');
         document.getElementById("iEffective").classList.add('hide');
+        document.getElementById("iEffective_button").classList.remove('button-primary');
         document.getElementById("Depreciation").classList.remove('hide');
+        document.getElementById("Depreciation_button").classList.add('button-primary');
     }
 };
